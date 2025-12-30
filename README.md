@@ -7,7 +7,7 @@
 - Segmentation head: Conv2D layer producing (B, 256, 256, 1) sigmoid output.
 - Classification head: Global Average Pooling on bridge features + Dense layers + Dropout → (B, 3) softmax output.
 
-# Trainng
+# Training
 - Simultaneous Optimization: The model is defined with two outputs (seg_output and class_output) and compiled with a single optimizer.
 - Shared Encoder Updates: The ResNet50 encoder acts as a shared backbone. In every training step (batch), gradients from both the Segmentation head (Dice Loss) and the Classification head (CrossEntropy) flow back into the ResNet50 encoder simultaneously. This forces the encoder to learn features that are useful for both tasks at once.
 
