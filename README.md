@@ -23,8 +23,10 @@ The model follows a sequential workflow to ensure the classifier focuses on the 
 - Classification: These masked features are then passed to the classifier.
 
 
-| Metric   | Score      |
-| ** DSC** | **0.7898** |
-| ** NSD** | **0.5971** |
-| ** F1**  | **0.8531** |
-| ** Acc** | **0.8737** |
+
+| Metric          | Score  |
+| --------------- | -------|
+| Mean Dice (DSC) |0.7898  |
+| Mean NSD        | 0.5971 |
+| Macro F1        | 0.8531 |
+| Accuracy        |0.8737 ​ |
