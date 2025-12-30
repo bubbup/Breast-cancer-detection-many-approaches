@@ -3,11 +3,12 @@
 ## Model Architecture
 
 The model follows a sequential workflow to ensure the classifier focuses on the tumor:
-Encoder: EfficientNet-B0 (pretrained via timm) extracting features at 5 stages.
-Decoder: Bilinear upsampling + skip connection concatenation + convolutional blocks.
-Boundary Attention: Explicitly reweights decoder features using the predicted segmentation mask (sigmoid activated) before passing them to the classifier.
-Segmentation head: outputs the Predicted Mask
-Classification head: Boundary-attended features → AdaptiveAvgPool (GAP) → Flatten → MLP (Linear-ReLU-Dropout-Linear) → logits (B, 3)
+
+- Encoder: EfficientNet-B0 (pretrained via timm) extracting features at 5 stages.
+- Decoder: Bilinear upsampling + skip connection concatenation + convolutional blocks.
+- Boundary Attention: Explicitly reweights decoder features using the predicted segmentation mask (sigmoid activated) before passing them to the classifier.
+- Segmentation head: outputs the Predicted Mask
+- Classification head: Boundary-attended features → AdaptiveAvgPool (GAP) → Flatten → MLP (Linear-ReLU-Dropout-Linear) → logits (B, 3)
 
 ## Sequence:
 
